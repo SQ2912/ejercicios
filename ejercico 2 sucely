@@ -1,0 +1,31 @@
+def main():
+    # Paso 1: Pedir al usuario que ingrese números separados por espacios
+    input_str = input("Ingresa una serie de números separados por espacios: ")
+    
+    # Paso 2: Dividir la cadena en una lista de cadenas de números
+    num_strings = input_str.split()
+    
+    # Paso 3: Convertir cada cadena en un número entero y almacenarlos en una lista
+    nums = []
+    for num_str in num_strings:
+        num = int(num_str)
+        nums.append(num)
+    
+    # Paso 4: Implementar el algoritmo de ordenamiento de selección
+    n = len(nums)
+    for i in range(n):
+        min_index = i
+        for j in range(i + 1, n):
+            if nums[j] < nums[min_index]:
+                min_index = j
+        nums[i], nums[min_index] = nums[min_index], nums[i]
+    
+    # Paso 5: Imprimir la lista ordenada
+    print("Lista ordenada:")
+    for num in nums:
+        print(num, end=" ")
+    print()  # Para imprimir un salto de línea al final
+
+if __name__ == "__main__":
+    main()
+
